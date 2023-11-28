@@ -1,0 +1,66 @@
+<div class="card mb-sm-3 mb-md-0 contacts_card" >
+    <div class="card-header">
+        <span class="fs-3 d-flex justify-content-center mb-2" style="color: white;">
+            <div class="d-flex">
+                <div class="me-2 d-flex justify-content-center align-items-center" style="border-radius: 50%; height: 35px; width: 35px;background-color: rgba(75, 64, 64, 0.5); ">
+                    <i class="fa fa-user fs-4" ></i>
+                </div>
+                <span class="fs-4">Personnes</span> 
+            </div>
+             <button class="btn_hide" id="btn_menu" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <span class="fa fa-align-justify"></span>
+            </button>
+        </span>
+        <div class="input-group">
+            <input type="text" placeholder="Rechercher..." name="" class="form-control search" [(ngModel)]="user_search">
+            <div class="input-group-prepend" type="button" (click)="searchUser(user_search)">
+                <span class="input-group-text search_btn "><i class="fa fa-search"></i></span>
+            </div>
+        </div>
+    </div>
+    <div id="collapseExample">
+        <div class="card-body contacts_body">
+            <ul class="contacts" *ngFor="let user of users">
+                <li class="active" *ngIf="user.id != userId && user.chat == false">
+                    <div class="d-flex bd-highlight">
+                        <div class="img_cont">
+                            <img src="{{ this.url }}/{{ user.image }}" class="rounded-circle user_img">
+                            <span class="online_icon" *ngIf="user.status == 'actif'"></span>
+                            <span class="online_icon offline" *ngIf="user.status == 'inactif'"></span>
+                        </div>
+                        <div class="user_info">
+                            <span>{{ user.username }}</span>
+                            <p>
+                                {{ user.username }} 
+                                <span *ngIf="user.status == 'actif'">est en ligne</span>
+                                <span *ngIf="user.status == 'inactif'">en ligne il y a 2 min</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary create_convers" (click)="createConversation(user.id)">Créer une conversation</button>
+                    </div>
+                </li>
+                <li class="active" style="cursor: pointer;" *ngIf="user.id != userId && user.chat == true" (click)="chatWithOther(user.id,user.conversationId)">
+                    <div class="d-flex bd-highlight">
+                        <div class="img_cont">
+                            <img src="{{ this.url }}/{{ user.image }}" class="rounded-circle user_img">
+                            <span class="online_icon" *ngIf="user.status == 'actif'"></span>
+                            <span class="online_icon offline" *ngIf="user.status == 'inactif'"></span>
+                        </div>
+                        <div class="user_info">
+                            <span>{{ user.username }}</span>
+                            <p>
+                                {{ user.username }} 
+                                <span *ngIf="user.status == 'actif'">est en ligne</span>
+                                <span *ngIf="user.status == 'inactif'">en ligne il y a 2 min</span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-footer">
+    </div>
+</div>

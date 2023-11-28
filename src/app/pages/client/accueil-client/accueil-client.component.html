@@ -1,0 +1,29 @@
+<!-- <h2>CLIENT PAGE</h2>
+<button class="btn btn-primary" (click)="logout()">Se deconnecter</button> -->
+<app-header></app-header>
+
+<!-- <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Button with data-bs-target
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+  </div> -->
+
+<div class="container-fluid h-50 mt-2">
+    <div class="row justify-content-center h-100">
+        <div class="col-md-4 col-xl-4 chat">
+            <app-users-list *ngIf="discussion == 'private'" ></app-users-list>
+            <app-groupes-list *ngIf="discussion == 'grouped'"></app-groupes-list>
+        </div>
+        <div class="col-md-8 col-xl-8 chat">
+            <app-conversation [id]="idUserToTalk"></app-conversation>
+        </div>
+    </div>
+</div>

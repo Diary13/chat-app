@@ -1,0 +1,104 @@
+<div class="card new_conversation" *ngIf="conversationId != 0" data-aos="zoom-in" data-aos-delay="500">
+    <div class="card-header msg_head">
+        <div class="d-flex bd-highlight">
+            <div class="img_cont">
+                <img src="{{ url }}/{{ receiver.image }}" class="rounded-circle user_img">
+                <span class="online_icon" *ngIf="receiver.status == 'actif'"></span>
+                    <span class="online_icon offline" *ngIf="receiver.status == 'inactif'"></span>
+            </div>
+            <div class="user_info">
+                <span>Discussion avec {{ receiver.username }}</span>
+                <p *ngIf="nb_mes>1">{{ nb_mes }} Messages</p>
+                <p *ngIf="nb_mes<=1">{{ nb_mes }} Message</p>
+            </div>
+            <div class="video_cam">
+                <span><i class="fa fa-video"></i></span>
+                <span><i class="fa fa-phone"></i></span>
+            </div>
+        </div>
+        <span id="action_menu_btn"><i class="fa fa-ellipsis-v"></i></span>
+        <div class="action_menu">
+            <ul>
+                <li><i class="fa fa-user-circle"></i> Voir profil</li>
+                <li><i class="fa fa-dump"></i>Supprimer tous les messages</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-body msg_card_body">
+        <div *ngFor="let message of messages">
+            <div class="d-flex justify-content-start mb-4" *ngIf="message.senderId == receiver.id">
+                <div class="img_cont_msg">
+                    <img src="{{ url }}/{{ receiver.image }}" class="rounded-circle user_img_msg">
+                </div>
+                <div class="msg_cotainer">
+                    {{ message.text }}
+                    <span class="msg_time">8:40 AM, Aujourd'hui</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mb-4" *ngIf="message.senderId == userId">
+                <div class="msg_cotainer_send">
+                    {{ message.text }}
+                    <span class="msg_time_send">8:55 AM, Aujourd'hui</span>
+                </div>
+                <div class="img_cont_msg">
+                    <img src="{{ url }}/{{ image }}" class="rounded-circle user_img_msg">
+                </div>
+            </div>
+        </div>
+        <!-- <div style="color: white;">
+            <div *ngFor="let t of tmp">
+                <h4>{{t.message}}</h4>
+            </div>
+        </div> -->
+    </div>
+    <div class="card-footer">
+        <form [formGroup]="message_form">
+            <div class="input-group">
+                <div class="input-group-append">
+                    <span class="input-group-text attach_btn"><i class="fa fa-paperclip"></i></span>
+                </div>
+                <textarea name="" class="form-control type_msg" placeholder="Entrer un message..." formControlName="message"></textarea>
+                <div class="input-group-append" type="button" (click)="sendMessage()" required>
+                    <span class="input-group-text send_btn"><i class="fa fa-location-arrow"></i></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card new_conversation d-flex flex-column row justify-content-center align-item-center text-white" *ngIf="conversationId == 0" data-aos="zoom-in" data-aos-delay="200">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="d-flex " data-aos="fade-left" data-aos-delay="300">
+            <div class="bg_icon_conversation d-flex justify-content-center align-items-center">
+                <span ><i class="fa fa-envelope new_conversation_icon"></i></span>
+            </div>
+            <div class="ms-2">
+                <h3>Créer une conversation</h3>
+                <p>Lorem ipsum, dolor sit amet consec
+                    tetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="d-flex" data-aos="fade-left" data-aos-delay="500">
+            <div class="bg_icon_conversation d-flex justify-content-center align-items-center">
+                <span ><i class="fa fa-question new_conversation_icon"></i></span>
+            </div>
+            <div class="ms-2">
+                <h3>Comment discuter avec quelqu'un?</h3>
+                <p>Lorem ipsum, dolor sit amet consec
+                    tetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="d-flex" data-aos="fade-left" data-aos-delay="700">
+            <div class="bg_icon_conversation d-flex justify-content-center align-items-center">
+                <span ><i class="fa fa-exclamation-circle new_conversation_icon"></i></span>
+            </div>
+            <div class="ms-2">
+                <h3>Attention</h3>
+                <p>Lorem ipsum, dolor sit amet consec
+                    tetur adipisicing elit.</p>
+            </div>
+        </div>
+        
+    </div>
+    <img src="assets/images/chat.jpg" class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 chat_img" alt="F4">
+</div>

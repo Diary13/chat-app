@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Client</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+  <script>
+    // function getWidth() {
+    //   const documentWidth = document.documentElement.clientWidth;
+    //   // const w = window.innerWidth;
+    //   return Math.abs(documentWidth);
+    // }
+    
+    function show_password() {
+      let tmp = document.getElementById("password");
+      if(tmp.type == "password")
+          tmp.type = "text";
+      else
+          tmp.type = "password";
+    }
+  </script>
+</body>
+</html>

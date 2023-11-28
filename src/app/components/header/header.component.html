@@ -1,0 +1,54 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light m-2">
+    <div class="container-fluid">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+            <li class="nav-item active">
+                <img src="{{ url }}/{{image}}" class="img-fluid rounded-circle" width="50px" height="50px" alt="F4">
+            </li>
+            <li class="" style="padding-left: 4px;">
+                <p class="text-dark fw-bold m-0">{{ username }}!</p>
+            </li>
+        </ul>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+        <div class="" id="navbarSupportedContent">
+            <p class="me-auto"></p>
+            <ul class="navbar-nav  mx-0 mx-lg-0 d-flex flex-row">
+                <li class="nav-item mt-1">
+                    <a type="button" class="btn btn-default position-relative">
+                        <i class="fa fa-bell fa-fw"></i>
+                        <span class="position-absolute start-80 translate-middle badge rounded-pill bg-danger" style="margin-top: 6px;">
+                            4
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item mt-1" (click)="privateMessage()">
+                    <a type="button"  class="btn btn-default position-relative" id="messagesDropdown">
+                        <i class="fa fa-envelope fa-fw"></i>
+                        <span class="position-absolute start-80 translate-middle badge rounded-pill bg-danger" style="margin-top: 6px;">4</span>
+                    </a>
+                </li>
+                <li class="nav-item mt-1">
+                    <a type="button"  class="btn btn-default position-relative" id="messagesDropdown">
+                        <i class="fa fa-users"></i>
+                        <span class="position-absolute start-80 translate-middle badge rounded-pill bg-danger" style="margin-top: 6px;">
+                            4
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item mt-2 ms-2 me-2">
+                    <a type="button" class="fw-bold fs-5">
+                        <i class='fa fa-wrench text-dark'></i>
+                    </a>
+                </li>
+                <li class="nav-item mt-2 ms-2" (click)="logout()">
+                    <a type="button" class="fw-bold fs-5">
+                        <i class='fa fa-sign-out text-dark'></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>

@@ -1,0 +1,66 @@
+<div id="login">
+    <div class="container" data-aos="zoom-in" data-aos-delay="300">
+        <div id="login_header">
+            CHAT
+        </div>
+        <form id="form_login" [formGroup]="form">
+            <div class="wrap_input mx-2">
+                <i class="fa fa-user focus_input"></i>
+                <input type="text" class="input_form" formControlName="mail" name="mail" id="mail" placeholder="Entrer votre adresse email">
+            </div>
+            <div class="wrap_input mx-2">
+                <i class="fa fa-lock focus_input"></i>
+                <input type="password" class="input_form" formControlName="password" name="password" id="password" placeholder="Entrer votre mot de passe">
+            </div>
+            <label id="show_password" >
+                <input type="checkbox" onclick="show_password()" name="">
+                <span>Afficher le mot de passe</span>
+            </label>
+            <button (click)="submit()" class="col-12 col-xm-12 col-md-12 col-lg-12 mt-4 button_connexion">Se connecter</button>
+        </form>
+        
+        <div id="login_footer">
+            <a data-bs-toggle="modal" data-bs-target="#modal_inscription" id="subscribe">S'inscrire</a>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="modal_inscription" tabindex="-1" aria-labelledby="modal_inscription" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Créer un nouveau compte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="form_inscription">
+        <div class="modal-body">
+            
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="username">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" formControlName="username" name="username" id="username">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="mail">Adresse e-mail</label>
+                        <input type="text" class="form-control" formControlName="mail" name="mail" id="mail">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" formControlName="password" name="password_modal" id="password_modal">
+                    </div> 
+                    <div class="form-group mt-2">
+                        <label for="image">Photos de profil</label>
+                        <input type="file" class="form-control" formControlName="image" name="image" id="image">
+                    </div>                     
+                </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-primary" (click)="saveUser()">Enregistrer</button>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>

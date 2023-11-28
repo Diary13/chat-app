@@ -1,0 +1,152 @@
+.btn_style {
+    /* display:block; */
+    position: absolute;
+    background-color: whitesmoke;
+    border-style: none;
+    color: black;
+    font-size: 15px;
+    height: 25px;
+    margin-top: 5px;
+    right: 10px;
+}
+.btn_hide {
+    display:none;
+}
+.card{
+    /* height: 550px; */
+    border-radius: 15px !important;
+    /* background-image: url("../../../../assets/images/bg.jpg"); */
+    background-color: #040E18;
+    /* background-color: rgba(0,0,0,0.4) !important; */
+}
+.card-header{
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 0 !important;
+}
+.card-footer{
+border-radius: 0 0 15px 15px !important;
+    border-top: 0 !important;
+}
+.container{
+    align-content: center;
+}
+.search{
+    border-radius: 15px 0 0 15px !important;
+    background-color: white;
+    /* background-color: rgba(0,0,0,0.3) !important; */
+    border:0 !important;
+    /* color:white !important; */
+    color: black;
+}
+.search:focus{
+     box-shadow:none !important;
+   outline:0px !important;
+}
+.search_btn{
+    border-radius: 0 15px 15px 0 !important;
+    background-color:whitesmoke;
+    /* background-color: rgba(0,0,0,0.3) !important; */
+    border:0 !important;
+    height: 36px;
+    color: rgb(61, 58, 58) !important;
+    cursor: pointer;
+}
+
+/*******FIN***************/
+
+.chat{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contacts_body{
+    padding:  0.75rem 0 !important;
+    overflow-y:scroll;
+    height: 435px;
+    /* white-space: nowrap; */
+}
+.contacts{
+    list-style: none;
+    padding: 0;
+}
+.contacts li{
+    width: 100% !important;
+    padding: 5px 10px;
+    margin-bottom: 15px !important;
+}
+.active:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+.user_img{
+    height: 70px;
+    width: 70px;
+    border:1.5px solid #f5f6fa;
+
+}
+.img_cont{
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+.online_icon{
+    position: absolute;
+    height: 15px;
+    width:15px;
+    background-color: #4cd137;
+    border-radius: 50%;
+    bottom: 0.2em;
+    right: 0.4em;
+    border:1.5px solid white;
+}
+.offline{
+    background-color: #c23616 !important;
+}
+.user_info{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15px;
+}
+.user_info {
+    font-size: 20px;
+    color: white;
+}
+.user_info p{
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+}
+
+.create_convers {
+    width: 110px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0px;
+    margin-left: 80px;
+    margin-top: -20px;
+}
+
+@media(max-width: 576px){
+    .contacts_card{
+    margin-bottom: 15px !important;
+    }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7F7FD5; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5454b6; 
+}
